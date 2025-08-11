@@ -55,6 +55,38 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* ─── Centering additions ─────────────────────── */
+#auth-section, #app-section {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Center inputs, selects, textareas, buttons inside auth and app sections */
+#auth-section input,
+#auth-section textarea,
+#auth-section select,
+#auth-section button,
+#app-section input,
+#app-section textarea,
+#app-section select,
+#app-section button {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Center inputs/selects/textarea inside table cells */
+#applications-table td input,
+#applications-table td textarea,
+#applications-table td select {
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 /* ─── Auth Section ─────────────────────────────── */
 #auth-section {
   max-width: 400px;
