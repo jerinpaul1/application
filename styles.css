@@ -148,6 +148,37 @@ td button {
   border-radius: var(--radius);
 }
 
+/* ─── Status Styles ─────────────────────────────── */
+.status-planned {
+  background-color: #9dc5fa; /* light blue */
+}
+
+.status-applied {
+  background-color: #d694f2; /* light purple */
+}
+
+.status-interview {
+  background-color: #fef3c7; /* light yellow */
+}
+
+.status-offer {
+  background-color: #5df592; /* light green */
+}
+
+.status-rejected {
+  background-color: #fc9090; /* light red */
+}
+
+.status-withdrawn {
+  background-color: #b8b4b4; /* light grey */
+}
+
+/* Optional: on hover, slightly darken the background */
+tbody tr:hover {
+  filter: brightness(0.95);
+}
+
+
 /* ─── Responsive ─────────────────────────────── */
 @media (max-width: 600px) {
   body {
