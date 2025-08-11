@@ -58,22 +58,42 @@ supabaseClient.auth.getSession().then(({ data }) => {
 
 // Add application
 document.getElementById('add-btn').addEventListener('click', async () => {
-  if (!currentUser) return;
+  if (!currentUser) {
+    console.error("No user logged in");
+    return;
+  }
 
-  const { error } = await supabaseClient.from('applications').insert([{
-    user_id: currentUser.id,
-    application_name: document.getElementById('application_name').value,
-    organization: document.getElementById('organization').value,
-    deadline: document.getElementById('deadline').value || null,
-    status: document.getElementById('status').value,
-    date_applied: document.getElementById('date_applied').value || null,
-    follow_up_date: document.getElementById('follow_up_date').value || null,
-    notes: document.getElementById('notes').value
-  }]);
+  const application_name = document.getElementById('application_name').value.trim();
+  const organization = document.getElementById('organization').value.trim();
+  const deadline = document.getElementById('deadline').value || null;
+  const status = document.getElementById('status').value;
+  const date_applied = document.getElementById('date_applied').value || null;
+  const follow_up_date = document.getElementById('follow_up_date').value || null;
+  const notes = document.getElementById('notes').value.trim();
+
+  if (!application_name) {
+    alert("Application Name is required");
+    return;
+  }
+
+  const { data, error } = await supabaseClient
+    .from('applications')
+    .insert([{
+      user_id: currentUser.id,
+      application_name,
+      organization,
+      deadline,
+      status,
+      date_applied,
+      follow_up_date,
+      notes
+    }]);
 
   if (error) {
     console.error("Insert error:", error);
+    alert("Insert error: " + error.message);
   } else {
+    console.log("Insert success:", data);
     clearForm();
     loadApplications();
   }
