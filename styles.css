@@ -136,9 +136,6 @@ th, td {
   text-align: left;
   vertical-align: middle;
 }
-tbody tr:nth-child(even) {
-  background-color: #f3f4f6;
-}
 td button {
   padding: 0.3rem 0.6rem;
   font-size: 0.85rem;
