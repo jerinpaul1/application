@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Application Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Application Tracker</h1>
+
+  <div id="auth-section">
+    <h2>Login / Sign Up</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="login-btn">Login</button>
+    <button id="signup-btn">Sign Up</button>
+    <p id="auth-message"></p>
+  </div>
+
+  <div id="app-section" style="display:none;">
+    <button id="logout-btn">Logout</button>
+
+    <h2>Add Application</h2>
+    <input type="text" id="application_name" placeholder="Application Name">
+    <input type="text" id="organization" placeholder="Organization">
+    <input type="date" id="deadline">
+    <select id="status">
+      <option>Planned</option>
+      <option>Applied</option>
+      <option>Interview</option>
+      <option>Offer</option>
+      <option>Rejected</option>
+      <option>Withdrawn</option>
+    </select>
+    <input type="date" id="date_applied">
+    <input type="date" id="follow_up_date">
+    <textarea id="notes" placeholder="Notes"></textarea>
+    <input type="url" id="link" placeholder="Application Link (URL)">
+    <button id="add-btn">Add</button>
+
+    <h2>Your Applications</h2>
+    <table id="applications-table" border="1">
+      <thead>
+        <tr>
+          <th>Application</th>
+          <th>Organization</th>
+          <th>Deadline</th>
+          <th>Status</th>
+          <th>Date Applied</th>
+          <th>Follow-up Date</th>
+          <th>Notes</th>
+          <th>Link</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="applications-body"></tbody>
+    </table>
+  </div>
+
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
