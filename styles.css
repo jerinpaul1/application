@@ -1,0 +1,190 @@
+:root {
+  --color-bg:    #f9fafb;
+  --color-card:  #ffffff;
+  --color-primary: #3b82f6;
+  --color-accent:  #10b981;
+  --color-text:  #1f2937;
+  --color-muted: #6b7280;
+  --radius:      0.5rem;
+  --spacing:     1rem;
+  --font-sans: 'Inter', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--spacing);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover:not(:disabled) {
+  background: var(--color-accent);
+}
+button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ─── Auth Section ─────────────────────────────── */
+#auth-section {
+  max-width: 400px;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+#auth-section h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: var(--spacing);
+}
+#auth-section input, #auth-section textarea, #auth-section select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: var(--spacing);
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+}
+#auth-section button {
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+/* ─── App Section ─────────────────────────────── */
+#app-section {
+  width: 100%;
+  max-width: 900px;
+}
+
+/* ─── Cards ─────────────────────────────────────── */
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+/* ─── Add Application Form ─────────────────────── */
+#app-section input[type="text"],
+#app-section input[type="date"],
+#app-section select,
+#app-section textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: var(--spacing);
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius);
+  font-family: var(--font-sans);
+  resize: vertical;
+}
+
+#app-section textarea {
+  min-height: 80px;
+}
+
+/* ─── Table Styles ─────────────────────────────── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing);
+  font-family: var(--font-sans);
+}
+thead {
+  background-color: var(--color-primary);
+  color: white;
+}
+th, td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: middle;
+}
+tbody tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+tbody tr:hover {
+  background-color: #e0f2fe;
+}
+td button {
+  padding: 0.3rem 0.6rem;
+  font-size: 0.85rem;
+  border-radius: var(--radius);
+}
+
+/* ─── Responsive ─────────────────────────────── */
+@media (max-width: 600px) {
+  body {
+    padding: 0.5rem;
+  }
+  #app-section {
+    max-width: 100%;
+  }
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  thead tr {
+    display: none;
+  }
+  tbody tr {
+    margin-bottom: var(--spacing);
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: var(--spacing);
+    background: var(--color-card);
+  }
+  tbody td {
+    padding-left: 50%;
+    position: relative;
+    text-align: left;
+  }
+  tbody td::before {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: 600;
+    content: attr(data-label);
+  }
+  td button {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
