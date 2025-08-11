@@ -139,9 +139,6 @@ th, td {
 tbody tr:nth-child(even) {
   background-color: #f3f4f6;
 }
-tbody tr:hover {
-  background-color: #e0f2fe;
-}
 td button {
   padding: 0.3rem 0.6rem;
   font-size: 0.85rem;
