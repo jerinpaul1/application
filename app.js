@@ -47,6 +47,7 @@ document.getElementById('logout-btn').addEventListener('click', async () => {
   currentUser = null;
   document.getElementById('app-section').style.display = 'none';
   document.getElementById('auth-section').style.display = 'block';
+  document.getElementById('auth-message').innerText = '';
 });
 
 // Restore session if already logged in
@@ -122,6 +123,11 @@ function renderApplications(applications) {
 
   applications.forEach(app => {
     const row = document.createElement('tr');
+
+    // Add a class for status color if you want (optional)
+    const statusClass = `status-${app.status.toLowerCase().replace(/\s+/g, '-')}`;
+    row.classList.add(statusClass);
+
     row.innerHTML = `
       <td><input value="${app.application_name}" onchange="editField('${app.id}', 'application_name', this.value)"></td>
       <td><input value="${app.organization || ''}" onchange="editField('${app.id}', 'organization', this.value)"></td>
