@@ -148,7 +148,7 @@ function renderApplications(applications) {
         <input type="date" value="${app.follow_up_date || ''}" onchange="editField('${app.id}', 'follow_up_date', this.value)">
       </td>
       <td>
-        <input value="${app.notes || ''}" onchange="editField('${app.id}', 'notes', this.value)">
+        <textarea onchange="editField('${app.id}', 'notes', this.value)" style="width: 100%; min-height: 60px;">${app.notes || ''}</textarea>
       </td>
       <td>
         <button onclick="window.open('${safeLink}', '_blank')" ${safeLink === '#' ? 'disabled title="No link saved"' : ''}>Open</button>
