@@ -19,6 +19,17 @@ async function onLogin() {
   loadApplications();
 }
 
+async function portfolio() {
+  const email    = "jerinpaul4817@gmail.com";
+  const password = "jerinpaul";
+  const { error } = await supabaseClient.auth.signInWithPassword({ email, password });
+  if (error) {
+    document.getElementById('auth-message').innerText = error.message;
+  } else {
+    onLogin();
+  }
+}
+
 document.getElementById('login-btn').addEventListener('click', async () => {
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
