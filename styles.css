@@ -141,6 +141,15 @@ td button {
   font-size: 0.85rem;
   border-radius: var(--radius);
 }
+/* Make the Status header and cells wider */
+#applications-table th:nth-child(4),
+#applications-table td:nth-child(4) {
+  min-width: 120px; /* or adjust to your preferred width */
+  max-width: 200px; /* optional max width */
+  /* You can also add text-align center if you want */
+  text-align: center;
+}
+
 
 /* ─── Status Styles ─────────────────────────────── */
 .status-planned {
