@@ -149,12 +149,29 @@ td button {
   max-width: 200px; /* optional max width */
   text-align: center;
 }
+#applications-table th:nth-child(7),
+#applications-table td:nth-child(7) {
+  min-width: 300px;
+  max-width: 400px;
+  white-space: normal;
+}
+
+#applications-table textarea.notes-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+  padding: 0.3rem 0.5rem;
+}
 
 /* Make the Link header and cells wider */
 #applications-table th:nth-child(8),
 #applications-table td:nth-child(8) {
-  min-width: 140px;
-  max-width: 250px;
+  min-width: 50px;
+  max-width: 100px;
   text-align: center;
 }
 
